@@ -244,9 +244,10 @@ p {
 
     .card{
         min-height: 100px;
-        margin-top: 80px;
+        margin-top: 180px;
     }
     .card-button {
+        font-size: 1.2rem;
         opacity: 1;
         transform: translate(-50%, 50%);
     }
@@ -281,6 +282,7 @@ p {
     
     h1 {
         text-align: center;
+        font-size: 2.5rem;
     }
 
     .navbar{
@@ -309,5 +311,9 @@ p {
     
     .navbar-link:hover {
         color: limegreen;
+    }
+
+    p {
+        font-size: 1.5rem;
     }
 }
