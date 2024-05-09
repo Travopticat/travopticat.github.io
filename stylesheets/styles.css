@@ -1,0 +1,313 @@
+/* Base */
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+html, body {
+    background-color: #343231;
+    color: #F0F0F0;
+    font-family: 'Courier New', Courier, monospace;
+    height: 100%;
+    overflow: hidden;
+    margin: 0;
+}
+
+h1 {
+    display: flex;
+    grid-area: headi;
+    align-self: end;
+}
+
+p {
+    grid-area: parag;
+    display: flex;
+    margin: 5%;
+    text-align: center;
+}
+
+/* Layout */
+
+.bottom {
+    bottom: 0;
+}
+
+.center-vertical {
+    align-self: center;
+}
+
+.center-horizontal {
+    justify-self: center;
+}
+
+.container-1 {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(100px, 1fr));
+    grid-template-rows: 1fr 2fr 1fr;
+    grid-template-areas: "heading heading image"
+        "para    para    para"
+        "card1   card2   card3"
+}
+
+.container-2 {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    height: 100vh;
+    grid-template-areas: "headi headi headi image image image"
+        "parag parag parag image image image"
+        "socia socia socia image image image"
+        "card1 card1 card2 card2 card3 card3"
+        "card1 card1 card2 card2 card3 card3";
+    overflow: auto;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.top {
+    top: 0;
+}
+
+/* Reusable Modules */
+
+.btn-1 {
+    background: transparent;
+    border: 2px solid limegreen;
+    border-radius: 10px;
+    box-shadow: inset 0 0 0 0 limegreen;
+    color: limegreen;
+    cursor: pointer;
+    font-size: 18px;
+    letter-spacing: 1px;
+    margin: 15px;
+    padding: 15px 30px;
+    text-align: center;
+    text-decoration: none;
+    transition: ease-out 0.5s;
+}
+
+.btn-1:hover {
+    box-shadow: inset 0 -100px 0 0 limegreen;
+    color: white;
+}
+
+.btn-1:active {
+    transform: scale(0.9);
+}
+
+.card {
+    align-items: center;
+    align-self: center;
+    background: #070D0D;
+    border: 2px solid #c3c6ce;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 50%;
+    max-height: 100%;
+    overflow: visible;
+    padding: 1.8rem;
+    position: relative;
+    transition: 0.5s ease-out;
+    width: 60%;
+    margin: auto auto;
+}
+
+.card:hover {
+    border-color: limegreen;
+    box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+}
+
+.card-button {
+    background-color: limegreen;
+    border: none;
+    border-radius: 1rem;
+    bottom: 0;
+    color: #fff;
+    font-size: 1rem;
+    opacity: 0;
+    padding: .5rem 1rem;
+    position: absolute;
+    transition: 0.3s ease-out;
+    transform: translate(-50%, 125%);
+    width: 80%;
+    margin: auto auto;
+    left:50%;
+}
+
+.card:hover .card-button {
+    opacity: 1;
+    transform: translate(-50%, 50%);
+}
+
+.card:hover .icon{
+    transition: 0.5s ease-out;
+    filter: invert(59%) sepia(48%) saturate(1142%) hue-rotate(73deg) brightness(102%) contrast(82%);
+}
+
+.card:hover p{
+    transition: 0.5s ease-out;
+    filter: invert(59%) sepia(48%) saturate(1142%) hue-rotate(73deg) brightness(102%) contrast(82%);
+}
+
+.icon-white{
+    filter: invert(98%) sepia(2%) saturate(4%) hue-rotate(178deg) brightness(117%) contrast(88%);
+}
+
+.image-right {
+    border-color: limegreen;
+    border-width: 20px;
+    align-self: center;
+    grid-area: image; 
+    width: 50%; 
+    height: 90%; 
+    object-fit: cover; 
+    object-position: top;
+    border-radius: 0 0 20px 20px; /* Updated border-radius property */
+    position: relative;
+    top: -10%;
+}
+
+.lime {
+    color:limegreen;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #070D0D;
+    padding: 20px;
+}
+
+.navbar-brand {
+    color: #F0F0F0;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.navbar-links {
+    display: flex;
+    gap: 20px;
+    list-style-type: none;
+}
+
+.navbar-link {
+    color: #F0F0F0;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.navbar-link:hover {
+    color: limegreen;
+}
+
+
+.pfp {
+    border: 2px solid #c3c6ce;
+    border-radius: 20px;
+    grid-area: image;
+    justify-self: center;
+    position: relative;
+    width: 60%;
+    margin: 20px;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.social {
+    grid-area: socia;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.social-icon {
+    display: flex;
+    max-height: 80px;
+    max-width: 80px;
+    margin: 10px;
+}
+
+/*Mobile*/
+
+@media (max-width: 1000px) {
+
+    .card{
+        min-height: 100px;
+        margin-top: 80px;
+    }
+    .card-button {
+        opacity: 1;
+        transform: translate(-50%, 50%);
+    }
+
+    .container-2 {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(12, 150px);
+        grid-template-areas:
+                            "headi headi"
+                            "image image"
+                            "image image"
+                            "image image"
+                            "socia socia"
+                            "parag parag"
+                            "card1 card1"
+                            "card1 card1"
+                            "card2 card2"
+                            "card2 card2"
+                            "card3 card3"
+                            "card3 card3";
+    }
+
+    .image-right {
+        justify-self: center;
+        align-self: center;
+        border-radius: 20px;
+        max-width: 50%;
+        margin: 0;
+        margin-top: 80px;
+        min-height: 200px;
+    }
+    
+    h1 {
+        text-align: center;
+    }
+
+    .navbar{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #070D0D;
+        padding: 20px;
+    }
+    
+    .navbar-links {
+
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        list-style-type: none;
+    }
+    
+    .navbar-link {
+        color: #F0F0F0;
+        text-decoration: none;
+        font-size: 18px;
+        transition: color 0.3s ease;
+        text-align: center;
+    }
+    
+    .navbar-link:hover {
+        color: limegreen;
+    }
+}
